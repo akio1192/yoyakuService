@@ -34,7 +34,8 @@
         <article>
             <section>
                 <h1>飛行機に乗る前に、日本の
-                    <span>食体験を予約</span>
+                    <span>食体験を
+                        <span id="spanBold">予約</span></span>
                 </h1>
             </section>
             <section>
@@ -43,7 +44,13 @@
                         <input type="text" class="inputField" id="datepicker" placeholder="予約日時">
                         <p class="calendar-icon" id="calendarIcon">📅</P>
                     </div>
-                    <input type="text" class="inputField" placeholder="人数">
+                    <input type="text" class="inputField" placeholder="人数" list="capacity-list">
+                    <datalist id="capacity-list">
+                        <option value="1人">
+                        <option value="2人">
+                        <option value="3人">
+                        <option value="4人">
+                    </datalist>
                     <input type="text" class="inputField" placeholder="店名">
                     <input type="submit" id="inputSubmit" value="予約">
                 </div>
