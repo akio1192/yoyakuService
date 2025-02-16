@@ -1,0 +1,209 @@
+body{
+    margin: 0 auto 0 auto;
+    background-color: rgb(248, 245, 240);
+    font-family: "Noto Sans JP", "游ゴシック体", "Yu Gothic", sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
+    align-items: center;
+    background-color: rgb(20, 49, 82);
+    color: white;
+}
+
+#title{
+  padding-left: 20px;
+}
+
+#nav-top {
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #nav-top ul {
+    display: flex;
+  }
+  
+  #nav-top li {
+    list-style: none;
+    margin: 0 20px 0 20px;
+    display:flex;
+    align-items: center;
+  }
+  #nav-top button{
+    border-style: none;
+    background:transparent;
+  }
+
+  section{
+    font-size: 30px;
+    text-align: left;
+  }
+  section h1{
+    padding-left: 40px;
+    font-size: 40px;
+  }
+
+  .inputField{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border: 2px solid  rgb(20, 49, 82);
+    outline:none;
+  }
+  .calendar-icon{
+    width: 30px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-112%);
+    z-index: 1;
+    cursor: pointer;
+  }
+  #calenderWrapper{
+    display: flex;
+    position: relative;
+  }
+  #inputFieldGroup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  #inputSubmit{
+    width: 70px;
+    height: 40px;
+    padding: 10px;
+    background-color:  rgb(20, 49, 82);
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  #language img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  #language{
+    display: flex;
+    align-items: center;
+  }
+
+
+  section span{
+    color:#C45537;
+    font-family: "Zen Kaku Gothic Antique", "BIZ UDPゴシック", sans-serif;
+  }
+
+  .step-text{
+    text-align: center;
+    font-family: "Zen Kaku Gothic Antique", "BIZ UDPゴシック", sans-serif;
+    font-size: 30px;
+  }
+
+  #service{
+    padding-top: 20px;
+  }
+
+  .steps-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* ステップ間の余白 */
+    max-width: 900px;
+    margin: auto;
+}
+
+.step {
+    background: white;
+    border: 2px solid rgb(20, 49, 82); /* ヘッダーと統一感 */
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.step img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.step h3 {
+    font-size: 18px;
+    color: rgb(20, 49, 82); /* ヘッダーの色 */
+}
+
+.step p {
+    font-size: 14px;
+    color: #333;
+}
+
+  .benefits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .benefit-card {
+    background-color: #FAF3E0; /* 和風の温かみのある色 */
+    border-left: 6px solid #D2691E; /* 茶色系のアクセント */
+    padding: 15px;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  .benefit-card h3 {
+    margin: 0;
+    font-weight: 600;
+  }
+  
+  .price {
+    background-color: #FFD700; /* 料金のカードは目立つ色 */
+  }
+  
+  .highlight {
+    color: #D2691E;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  #fixed-button{ 
+  position: fixed; /* 画面に固定 */
+  bottom: 20px; /* 下から20px */
+  right: 20px; /* 右から20px */
+  background-color: rgb(20, 49, 82); /* ヘッダーの色 */
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100; /* 他の要素より前面に表示 */
+  transition: background-color 0.3s ease;
+}
+   /* フッター */
+ footer {
+  background-color:rgb(90, 87, 82);
+  text-align: center;
+  margin-top: 30px;
+  padding: 80px 80px 30px 80px;
+  color: white;
+}
+
+
+
+  
