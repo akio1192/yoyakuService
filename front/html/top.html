@@ -16,14 +16,14 @@
         <p id="title">日本の飲食店予約代行サービス</p>
         <nav id="nav-top">
             <ul>
-                <li>ホーム</li>
-                <li>予約</li>
+                <li><a href="./top.html">ホーム</a></li>
+                <li><a href="./yoyaku.html">予約</a></li>
                 <li>レビュー</li>
                 <li>マイアカウント</li>
                 <li>お問い合わせ</li>
                 <li>
                     <div id="language">
-                        <img src="../img/test.png" alt="言語選択">
+                        <img src="../img/test.png" alt="言語を変更するボタン">
                         <p>日本語</p>
                     </div>
                 </li>
@@ -41,18 +41,20 @@
             <section>
                 <div id="inputFieldGroup">
                     <div id="calenderWrapper">
-                        <input type="text" class="inputField" id="datepicker" placeholder="予約日時">
+                        <input type="date" class="inputField" id="datepicker" placeholder="予約日時">
                         <p class="calendar-icon" id="calendarIcon">📅</P>
                     </div>
-                    <input type="text" class="inputField" placeholder="人数" list="capacity-list">
-                    <datalist id="capacity-list">
-                        <option value="1人">
-                        <option value="2人">
-                        <option value="3人">
-                        <option value="4人">
-                    </datalist>
-                    <input type="text" class="inputField" placeholder="店名">
-                    <input type="submit" id="inputSubmit" value="予約">
+                    <form action="yoyaku.html">
+                        <input type="text" class="inputField" placeholder="人数" list="capacity-list">
+                        <datalist id="capacity-list">
+                            <option value="1人">
+                            <option value="2人">
+                            <option value="3人">
+                            <option value="4人">
+                        </datalist>
+                        <input type="text" class="inputField" placeholder="店名">
+                        <input type="submit" id="inputSubmit" value="予約">
+                    </form>
                 </div>
             </section>
             <section>

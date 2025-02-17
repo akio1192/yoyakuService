@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="日本のレストランを簡単に予約！予約代行サービスで、人気の飲食店を確実に予約できます。海外からの旅行者にも対応。">
+    <link rel="stylesheet" href="../css/yoyaku.css">
+    <title>予約入力 | 日本のレストラン予約代行サービス</title>
+</head>
+
+<body>
+    <header>
+        <p id="title">日本の飲食店予約代行サービス</p>
+        <nav id="nav-top">
+            <ul>
+                <li><a href="./top.html">ホーム</a></li>
+                <li><a href="./yoyaku.html">予約</a></li>
+                <li>レビュー</li>
+                <li>マイアカウント</li>
+                <li>お問い合わせ</li>
+                <li>
+                    <div id="language">
+                        <img src="../img/test.png" alt="言語を変更するボタン">
+                        <p>日本語</p>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <h1>レストラン予約フォーム</h1>
+            <section>
+                <h3>予約情報を入力してください</h3>
+                <form>
+                    <div class="inputField">
+                        <label for="name">名前</label>
+                        <input type="text" id="name" placeholder="名前" required>
+                    </div>
+                    <div class="inputField">
+                        <label for="people">人数</label>
+                        <input type="number" id="people" placeholder="人数" required>
+                    </div>
+                    <div class="inputField">
+                        <label for="contact">連絡先</label>
+                        <input type="tel" id="contact" placeholder="電話番号" required>
+                    </div>
+                    <div class="inputField" id="datepicker">
+                        <label for="date">予約希望日</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="inputField">
+                        <label for="address">住所（任意）</label>
+                        <input type="text" id="address" placeholder="住所">
+                    </div>
+                    <div class="inputField">
+                        <label for="notes">特記事項（任意）</label>
+                        <textarea id="notes" placeholder="アレルギーなど"></textarea>
+                    </div>
+                    <div class="inputField">
+                        <label for="payment">決済方法</label>
+                        <select id="payment">
+                            <option value="credit">クレジットカード</option>
+                            <option value="paypay">PayPay</option>
+                            <option value="aupay">auPay</option>
+                            <option value="cash">現地決済</option>
+                        </select>
+                        <br>
+                    </div>
+                    <input type="submit" value="予約">
+                </form>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <div id="footer-logo">
+            <p>予約代行サービス</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="../js/yoyaku.js"></script>
+</body>
+
+</html>
