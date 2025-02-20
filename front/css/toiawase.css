@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    padding-top: 70px; /* ヘッダーの高さ分だけ余白を調整 */
+    background-color: rgb(248, 245, 240);
+    font-family: "Noto Sans JP", "游ゴシック体", "Yu Gothic", sans-serif;
+    display: flex;
+    flex-direction: column; /* 縦にレイアウト */
+    justify-content: flex-start; /* 上に寄せる */
+    height: 100vh; /* ビューポートの高さに合わせる */
+}
+
+/* mainでフォームの中央配置 */
+main {
+    flex-grow: 1; /* mainが残りの高さを占める */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+article {
+    width: 80%;
+    max-width: 600px; /* 最大幅を設定 */
+    background-color: white; /* 背景色を白にして目立たせる */
+    padding: 20px; /* 内部余白 */
+    border-radius: 8px; /* 角を丸く */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 軽い影をつけて立体感を出す */
+}
+
+/* ラベルと入力フィールドの調整 */
+.inputField {
+    display: flex;
+    flex-direction: column; /* ラベルと入力を縦に並べる */
+    margin-bottom: 15px;
+}
+
+.inputField label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    width: 100%; /* ラベルを幅いっぱいに */
+}
+
+/* 入力欄のデザイン */
+.inputField input, .inputField select, .inputField textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* 入力フィールドを親要素の幅に合わせる */
+}
+
+input[type="submit"] {
+    background-color: rgb(20, 49, 82);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* ボタンも入力欄と同じ幅 */
+    margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(15, 38, 65); /* ホバー時の色変更 */
+}
+
+/* ヘッダー */
+header{
+    display: flex;
+    justify-content: space-between;
+    font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
+    align-items: center;
+    background-color: rgb(20, 49, 82);
+    color: white;
+    position: fixed; /* 画面に固定 */
+    height: 70px;
+    width: 100%;
+    top: 0px;
+    z-index: 2;
+}
+
+#language img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  #language{
+    display: flex;
+    align-items: center;
+  }
+
+  #nav-top {
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #nav-top ul {
+    display: flex;
+  }
+  
+  #nav-top li {
+    list-style: none;
+    margin: 0 20px 0 20px;
+    display:flex;
+    align-items: center;
+  }
+  #nav-top button{
+    border-style: none;
+    background:transparent;
+  }
+  #title{
+    padding-left: 20px;
+  }
+
+     /* フッター */
+  footer {
+    background-color: rgb(90, 87, 82);
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+
+#kinkyu{
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border: solid black 1px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#renraku{
+    padding-left: 20px;
+}
+
+.kinkyuRenraku{
+   display: flex;
+   align-items: center;
+   padding-left: 50px;
+}
+
+
+#kinkyu p{
+    padding-left: 5px;
+ }

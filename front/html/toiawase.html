@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="日本の飲食店の予約代行サービスを提供するサイト。簡単な予約手続きで、日本の食文化を楽しめる体験をサポートします。">
+    <link rel="stylesheet" href="../css/toiawase.css">
+    <title>お問い合わせフォーム</title>
+</head>
+
+<body>
+    <header>
+        <p id="title">日本の飲食店予約代行サービス</p>
+        <nav id="nav-top">
+            <ul>
+                <li><a href="./top.html">ホーム</a></li>
+                <li><a href="./yoyaku.html">予約</a></li>
+                <li><a href="./toiawase.html">お問い合わせ</a></li>
+                <li>
+                    <div id="language">
+                        <img src="../img/test.png" alt="言語を変更するボタン">
+                        <p>日本語</p>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <article>
+            <section>
+                <h1>問い合わせ</h1>
+                <h3>問い合わせ情報を入力してください</h3>
+                <form>
+                    <div class="inputField">
+                        <label for="name">名前</label>
+                        <input type="text" id="name" placeholder="名前" required>
+                    </div>
+                    <div class="inputField">
+                        <label for="notes">お問い合わせ内容</label>
+                        <textarea id="notes" placeholder="お問い合わせ内容"></textarea>
+                    </div>
+                    <div class="inputField">
+                        <label for="email">メールアドレス</label>
+                        <input type="email" id="email" placeholder="メールアドレス" required>
+                    </div>
+                    <input type="submit" value="お問い合わせ">
+            </section>
+            <section>
+                <div id="kinkyu">
+                    <h3 id="renraku">
+                        お急ぎの方はこちらにご連絡を！
+                    </h3>
+                    <div class="kinkyuRenraku">
+                        <h3>
+                            対応時間：
+                        </h3>
+                        <p>随時対応（※1日以内にご返信いたします。）</p>
+                    </div>
+                    <div class="kinkyuRenraku">
+                        <h3>対応言語：</h3>
+                        <p>英語</p>
+                    </div>
+                    <div class="kinkyuRenraku">
+                        <h3>連絡先：</h3>
+                        <p>080-4294-4225</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <div id="footer-logo">
+            <p>予約代行サービス</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
