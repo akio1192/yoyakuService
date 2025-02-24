@@ -22,7 +22,12 @@
                 <li>
                     <div id="language">
                         <img src="../img/test.png" alt="言語を変更するボタン">
-                        <p>日本語</p>
+                        <p id="japanese">日本語</p>
+                    </div>
+                    <div id="languageChange">
+                        <p class="languageSelect">日本語</p>
+                        <p class="languageSelect">英語</p>
+                        <p class="languageSelect">フランス語</p>
                     </div>
                 </li>
             </ul>
@@ -40,17 +45,17 @@
                 <div id="inputFieldGroup">
                     <div id="calenderWrapper">
                         <input type="date" class="inputField" id="datepicker" placeholder="予約日時">
-                        <p class="calendar-icon" id="calendarIcon">📅</P>
+                        <p class="calendar-icon" id="calendarIcon">📅</p>
                     </div>
                     <form action="yoyaku.html">
-                        <input type="text" class="inputField" placeholder="人数" list="capacity-list">
+                        <input type="text" id="yoyakuNinzu" class="inputField" placeholder="人数" list="capacity-list">
                         <datalist id="capacity-list">
                             <option value="1人">
                             <option value="2人">
                             <option value="3人">
                             <option value="4人">
                         </datalist>
-                        <input type="text" class="inputField" placeholder="店名">
+                        <input type="text" id="tenMei" class="inputField" placeholder="店名">
                         <input type="submit" id="inputSubmit" value="予約">
                     </form>
                 </div>
@@ -101,7 +106,7 @@
     </main>
     <footer>
         <div id="footer-logo">
-            <p>予約代行サービス</p>
+            <p>&copy;2025 FujimotAkio, Inc. All Rights Reserved.</p>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
