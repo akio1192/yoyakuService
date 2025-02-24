@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
     step2: document.querySelector(".steps-container .step:nth-child(2) p"),
     step3: document.querySelector(".steps-container .step:nth-child(3) p"),
     fixedButton: document.getElementById("fixed-button"),
+    inputSubmit: document.getElementById("inputSubmit"),
     placeholders: {
       yoyakuNinzu: document.getElementById("yoyakuNinzu"),
       tenMei: document.getElementById("tenMei"),
@@ -90,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
       step2: "担当者が飲食店に電話予約",
       step3: "予約完了後、メールで連絡",
       fixedButton: "予約",
+      inputSubmit: "予約",
       placeholders: {
         yoyakuNinzu: "人数",
         tenMei: "店名",
@@ -110,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
       step2: "Our staff will call the restaurant",
       step3: "Receive confirmation via email",
       fixedButton: "Reserve",
+      inputSubmit: "Reserve",
       placeholders: {
         yoyakuNinzu: "Number of people",
         tenMei: "Restaurant name",
@@ -131,6 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
       step2: "Notre équipe appellera le restaurant",
       step3: "Recevez la confirmation par e-mail",
       fixedButton: "Réserver",
+      inputSubmit: "Réserver",
       placeholders: {
         yoyakuNinzu: "Nombre de personnes",
         tenMei: "Nom du restaurant",
@@ -159,6 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
       textElements.step2.textContent = translations[langCode].step2;
       textElements.step3.textContent = translations[langCode].step3;
       textElements.fixedButton.textContent = translations[langCode].fixedButton;
+      textElements.inputSubmit.value = translations[langCode].inputSubmit;
       // placeholderを変更
       textElements.placeholders.yoyakuNinzu.setAttribute(
         "placeholder",
