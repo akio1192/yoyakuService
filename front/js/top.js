@@ -9,6 +9,11 @@ calenderIcon.addEventListener("click", function () {
   document.getElementById("datepicker").focus();
 });
 
+let fixedYoyakuButton = document.getElementById("fixed-button");
+fixedYoyakuButton.addEventListener("click", () => {
+  location.href = "yoyaku.html";
+});
+
 let yoyakuButton = document.getElementById("inputSubmit");
 yoyakuButton.addEventListener("click", (event) => {
   event.preventDefault();
