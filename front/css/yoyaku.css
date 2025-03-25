@@ -45,7 +45,7 @@ article {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 100%; /* 入力フィールドを親要素の幅に合わせる */
+    width: 98%; /* 入力フィールドを親要素の幅に合わせる */
 }
 
 input[type="submit"] {
