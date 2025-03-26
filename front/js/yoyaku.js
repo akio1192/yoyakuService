@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+  //カレンダー入力
+  flatpickr(".datepicker", {
+    dateFormat: "Y-m-d", // 日付フォーマット
+    allowInput: true, // テキスト入力も許可
+    position: "auto", // カレンダーが自動で表示される位置
+  });
   init();
 });
 
@@ -223,5 +229,129 @@ document.addEventListener("DOMContentLoaded", function () {
         option.textContent = paymentOptions[index] || "";
       });
     });
+  });
+});
+
+const yoyaku = document.getElementById("yoyaku");
+const closeModal = document.getElementById("closeModal");
+const errorModal = document.getElementById("errorModal");
+//Inputフィールド
+const userNameInput = document.getElementById("name");
+const peopleInput = document.getElementById("people");
+const tenMeiInput = document.getElementById("tenMei");
+const contactInput = document.getElementById("contact");
+const paymentInput = document.getElementById("payment");
+const date1Input = document.getElementById("date1");
+const date2Input = document.getElementById("date2");
+const date3Input = document.getElementById("date3");
+
+//Errorメッセージフィールド
+const usernameError = document.getElementById("usernameError");
+const peopleError = document.getElementById("peopleError");
+const tenMeiError = document.getElementById("tenMeiError");
+const contactError = document.getElementById("contactError");
+const date1Error = document.getElementById("date1Error");
+const date2Error = document.getElementById("date2Error");
+const date3Error = document.getElementById("date3Error");
+const paymentError = document.getElementById("paymentError");
+
+////入力チェック
+yoyaku.addEventListener("click", (event) => {
+  event.preventDefault();
+  let errorCnt = 0;
+
+  //入力チェックのメッセージの初期化
+  usernameError.textContent = "";
+  usernameError.style.display = "none";
+  peopleError.textContent = "";
+  peopleError.style.display = "none";
+  tenMeiError.textContent = "";
+  tenMeiError.style.display = "none";
+  contactError.textContent = "";
+  contactError.style.display = "none";
+  paymentError.textContent = "";
+  paymentError.style.display = "none";
+  date1Error.textContent = "";
+  date2Error.textContent = "";
+  date3Error.textContent = "";
+
+  //必須チェック
+  if (userNameInput.value.trim() === "") {
+    errorCnt++;
+    usernameError.textContent = "名前を入力してください";
+    usernameError.style.display = "block";
+  }
+  if (peopleInput.value.trim() === "") {
+    errorCnt++;
+    peopleError.textContent = "人数を入力してください";
+    peopleError.style.display = "block";
+  }
+  if (tenMeiInput.value.trim() === "") {
+    errorCnt++;
+    tenMeiError.textContent = "予約店舗名を入力してください";
+    tenMeiError.style.display = "block";
+  }
+  if (contactInput.value.trim() === "") {
+    errorCnt++;
+    contactError.textContent = "連絡先を入力してください";
+    contactError.style.display = "block";
+  }
+  if (paymentInput.value.trim() === "") {
+    errorCnt++;
+    paymentError.textContent = "決済方法を入力してください";
+    paymentError.style.display = "block";
+  }
+  //予約希望日の必須チェック
+  if (date1Input.value.trim() === "") {
+    errorCnt++;
+    date1Error.textContent = "予約希望日①を入力してください";
+    date1Error.style.display = "block";
+  }
+  if (date2Input.value.trim() === "") {
+    errorCnt++;
+    date2Error.textContent = "予約希望日②を入力してください";
+    date2Error.style.display = "block";
+  }
+  if (date3Input.value.trim() === "") {
+    errorCnt++;
+    date3Error.textContent = "予約希望日③を入力してください";
+    date3Error.style.display = "block";
+  }
+  //予約希望日の重複チェック
+  const yoyakuDesiredReservation = [
+    date1Input.value,
+    date2Input.value,
+    date3Input.value,
+  ].filter((date) => date !== "");
+  const hasDuplicates = new Set(yoyakuDesiredReservation);
+  if (yoyakuDesiredReservation.length != hasDuplicates.size) {
+    errorCnt++;
+    date1Error.textContent = "予約希望日は重複しない日を入力してください";
+    date1Error.style.display = "block";
+    date2Error.textContent = "予約希望日は重複しない日を入力してください";
+    date2Error.style.display = "block";
+    date3Error.textContent = "予約希望日は重複しない日を入力してください";
+    date3Error.style.display = "block";
+  }
+  if (errorCnt > 0) {
+    overlay.style.display = "block"; // オーバーレイを表示
+    document.body.style.overflow = "hidden"; // モーダル表示中にスクロール禁止
+    errorModal.style.display = "block";
+  }
+});
+
+//モーダルを閉じる
+closeModal.addEventListener("click", () => {
+  errorModal.style.display = "none";
+  overlay.style.display = "none"; // オーバーレイを非表示
+  document.body.style.overflow = "auto"; // スクロールを再度許可
+});
+
+document.querySelectorAll(".calendar-icon").forEach((icon) => {
+  icon.addEventListener("click", function () {
+    const dateInput = this.previousElementSibling; // アイコンの直前の input を取得
+    if (dateInput && dateInput.classList.contains("datepicker")) {
+      dateInput.focus(); // フォーカスをあてる
+    }
   });
 });

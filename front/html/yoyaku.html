@@ -1,100 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="日本のレストランを簡単に予約！予約代行サービスで、人気の飲食店を確実に予約できます。海外からの旅行者にも対応。">
-    <link rel="stylesheet" href="../css/yoyaku.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="日本のレストランを簡単に予約！予約代行サービスで、人気の飲食店を確実に予約できます。海外からの旅行者にも対応。"
+    />
+    <link rel="stylesheet" href="../css/yoyaku.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
     <title>予約入力 | 日本のレストラン予約代行サービス</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <div id="overlay" class="overlay"></div>
+    <div id="errorModal">
+      <div id="errorModalHeader">Error</div>
+      <div id="errorMessage">
+        <p id="errorIcon">❌</p>
+        <p id="message">入力内容に誤りがあります</p>
+      </div>
+      <button id="closeModal">OK</button>
+    </div>
     <header>
-        <p id="title">日本の飲食店予約代行サービス</p>
-        <nav id="nav-top">
-            <ul>
-                <li><a href="./top.html">ホーム</a></li>
-                <li><a href="./yoyaku.html">予約</a></li>
-                <li><a href="./toiawase.html">お問い合わせ</a></li>
-                <li>
-                    <div id="language">
-                        <img src="../img/test.png" alt="言語を変更するボタン">
-                        <p id="japanese">日本語</p>
-                    </div>
-                    <div id="languageChange">
-                        <p class="languageSelect">日本語</p>
-                        <p class="languageSelect">英語</p>
-                        <p class="languageSelect">フランス語</p>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+      <p id="title">日本の飲食店予約代行サービス</p>
+      <nav id="nav-top">
+        <ul>
+          <li><a href="./top.html">ホーム</a></li>
+          <li><a href="./yoyaku.html">予約</a></li>
+          <li><a href="./toiawase.html">お問い合わせ</a></li>
+          <li>
+            <div id="language">
+              <img src="../img/test.png" alt="言語を変更するボタン" />
+              <p id="japanese">日本語</p>
+            </div>
+            <div id="languageChange">
+              <p class="languageSelect">日本語</p>
+              <p class="languageSelect">英語</p>
+              <p class="languageSelect">フランス語</p>
+            </div>
+          </li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <article>
-            <h1>レストラン予約フォーム</h1>
-            <section>
-                <h3>予約情報を入力してください</h3>
-                <form>
-                    <div class="inputField">
-                        <label for="name">名前</label>
-                        <input type="text" id="name" placeholder="名前" required>
-                    </div>
-                    <div class="inputField">
-                        <label for="people">人数</label>
-                        <input type="number" id="people" placeholder="人数" required>
-                    </div>
-                    <div class="inputField">
-                        <label for="tenMei">予約店舗名</label>
-                        <input type="text" id="tenMei" placeholder="予約店舗名" required>
-                    </div>
-                    <div class="inputField">
-                        <label for="contact">連絡先</label>
-                        <input type="tel" id="contact" placeholder="自身の電話番号" required>
-                    </div>
-                    <div class="inputField" id="datepicker">
-                        <label for="date1">予約希望日①</label>
-                        <input type="date1" id="date1" placeholder="予約希望日①" required>
-                    </div>
-                    <div class="inputField" id="datepicker">
-                        <label for="date2">予約希望日②</label>
-                        <input type="date2" id="date2" placeholder="予約希望日②" required>
-                    </div>
-                    <div class="inputField" id="datepicker">
-                        <label for="date3">予約希望日③</label>
-                        <input type="date3" id="date3" placeholder="予約希望日③" required>
-                    </div>
-                    <div class="inputField">
-                        <label for="address">住所（任意）</label>
-                        <input type="text" id="address" placeholder="住所">
-                    </div>
-                    <div class="inputField">
-                        <label for="notes">特記事項（任意）</label>
-                        <textarea id="notes" placeholder="アレルギーなど"></textarea>
-                    </div>
-                    <div class="inputField">
-                        <label for="payment">決済方法</label>
-                        <select id="payment">
-                            <option value="credit">クレジットカード</option>
-                            <option value="paypay">PayPay</option>
-                            <option value="aupay">auPay</option>
-                            <option value="cash">現地決済</option>
-                        </select>
-                        <br>
-                    </div>
-                    <input type="submit" value="予約">
-                </form>
-            </section>
-        </article>
+      <article>
+        <h1>レストラン予約フォーム</h1>
+        <section>
+          <h3>予約情報を入力してください</h3>
+          <form>
+            <div class="inputField">
+              <label for="name">名前</label>
+              <input type="text" id="name" placeholder="名前" />
+              <p id="usernameError" class="error-message"></p>
+            </div>
+            <div class="inputField">
+              <label for="people">人数</label>
+              <input type="number" id="people" placeholder="人数" />
+              <p id="peopleError" class="error-message"></p>
+            </div>
+            <div class="inputField">
+              <label for="tenMei">予約店舗名</label>
+              <input type="text" id="tenMei" placeholder="予約店舗名" />
+              <p id="tenMeiError" class="error-message"></p>
+            </div>
+            <div class="inputField">
+              <label for="contact">連絡先</label>
+              <input type="tel" id="contact" placeholder="自身の電話番号" />
+              <p id="contactError" class="error-message"></p>
+            </div>
+            <div class="inputField">
+              <label for="date1">予約希望日①</label>
+              <input
+                type="date"
+                id="date1"
+                class="datepicker"
+                placeholder="予約希望日①"
+              />
+              <p class="calendar-icon" id="calendarIcon">📅</p>
+              <p id="date1Error" class="error-message"></p>
+            </div>
+            <div class="inputField">
+              <label for="date2">予約希望日②</label>
+              <input
+                type="date"
+                id="date2"
+                class="datepicker"
+                placeholder="予約希望日②"
+                required
+              />
+              <p class="calendar-icon" id="calendarIcon">📅</p>
+              <p id="date2Error" class="error-message"></p>
+            </div>
+            <div class="inputField">
+              <label for="date3">予約希望日③</label>
+              <input
+                type="date"
+                id="date3"
+                class="datepicker"
+                placeholder="予約希望日③"
+                required
+              />
+              <p class="calendar-icon" id="calendarIcon">📅</p>
+              <p id="date3Error" class="error-message"></p>
+            </div>
+            <div class="inputField">
+              <label for="address">住所（任意）</label>
+              <input type="text" id="address" placeholder="住所" />
+            </div>
+            <div class="inputField">
+              <label for="notes">特記事項（任意）</label>
+              <textarea id="notes" placeholder="アレルギーなど"></textarea>
+            </div>
+            <div class="inputField">
+              <label for="payment">決済方法</label>
+              <select id="payment">
+                <option value="credit">クレジットカード</option>
+                <option value="paypay">PayPay</option>
+                <option value="aupay">auPay</option>
+                <option value="cash">現地決済</option>
+              </select>
+              <br />
+              <p id="paymentError" class="error-message"></p>
+            </div>
+            <input type="submit" value="予約" id="yoyaku" />
+          </form>
+        </section>
+      </article>
     </main>
     <footer>
-        <div id="footer-logo">
-            <p>&copy;2025 FujimotAkio, Inc. All Rights Reserved.</p>
-        </div>
+      <div id="footer-logo">
+        <p>&copy;2025 FujimotAkio, Inc. All Rights Reserved.</p>
+      </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="../js/yoyaku.js"></script>
-</body>
-
+  </body>
 </html>

@@ -137,3 +137,45 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+const otoiawase = document.getElementById("otoiawase");
+
+// inputFild
+const userNameInput = document.getElementById("name");
+const notesInput = document.getElementById("notes");
+const emailInput = document.getElementById("email");
+
+//Error
+const userNameError = document.getElementById("usernameError");
+const notesError = document.getElementById("notesError");
+const emailError = document.getElementById("emailError");
+
+// お問い合わせボタン押下
+otoiawase.addEventListener("click", (event) => {
+  event.preventDefault();
+  let errorCnt = 0;
+
+  //入力チェックのメッセージの初期化
+  userNameError.textContent = "";
+  userNameError.style.display = "none";
+  notesError.textContent = "";
+  notesError.style.display = "none";
+  emailError.textContent = "";
+  emailError.style.display = "none";
+
+  if (userNameInput.value.trim() === "") {
+    errorCnt++;
+    userNameError.textContent = "名前を入力してください";
+    userNameError.style.display = "block";
+  }
+  if (notesInput.value.trim() === "") {
+    errorCnt++;
+    notesError.textContent = "お問い合わせ内容を入力してください";
+    notesError.style.display = "block";
+  }
+  if (emailInput.value.trim() === "") {
+    errorCnt++;
+    emailError.textContent = "メールアドレスを入力してください";
+    emailError.style.display = "block";
+  }
+});
